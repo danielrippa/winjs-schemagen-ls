@@ -129,7 +129,8 @@
 
             model-error filepath, line, index, "Invalid statement '#line'"
 
-      entity = void
+      if entity isnt void
+        entities.push entity
 
       [ entities, relationships ]
 
