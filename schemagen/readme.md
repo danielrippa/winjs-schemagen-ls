@@ -12,7 +12,7 @@ Arguments:
   filepath Provide one or more schema files directly
 
 Examples:
-  schemagen sql mySchema.json
+  schemagen sql mySchema.schema
   schemagen puml @schemas.list
 
 ## Attribute Types
