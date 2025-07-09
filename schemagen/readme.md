@@ -32,3 +32,44 @@ Prepare a Model File Structure each line using keywords like * for entities, PK 
     FK author_id Author.id
     N published_year
 
+## PlantUML Mapping
+
+| Element | PlantUML | Equivalent | Notes |
+|--|--|--|
+| * EntityName | entity | EntityName { ... }| Declares an entity as a PlantUML class block |
+| PK field | * field | inside the entity block	| Rendered with a star to show it's a primary key |
+| FK field | RefEntity.id | * field + relationship line | Field listed in entity, and a separate A::field -- B::id line |
+| S, N, etc. | field or * field | based on nullability | Rendered normally or prefixed with * if not-null |
+| Relationships | Entity::field -- OtherEntity::id | Drawn as connector lines in PlantUML output |
+
+## Example
+Given this schema input:
+
+    * Author
+    PK id
+    S name
+    N birth_year
+
+    * Book
+    PK id
+    S title
+    FK author_id Author.id
+
+The generated PlantUML looks like:
+
+    @startuml
+    entity Author {
+      * id
+      --
+      name
+      birth_year
+    }
+    entity Book {
+      * id
+      --
+      * author_id
+      --
+      title
+    }
+    Book::author_id -- Author::id
+    @enduml
