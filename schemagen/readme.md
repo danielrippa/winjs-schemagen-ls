@@ -1,5 +1,20 @@
 # Readme
 
+Usage:
+
+  schemagen sql|puml @files|filepath ...
+
+Arguments:
+  sql      Generate SQL schema output
+  puml     Generate PlantUML schema diagram
+
+  @files   Use @filepath to read a list of files from that file
+  filepath Provide one or more schema files directly
+
+Examples:
+  schemagen sql mySchema.json
+  schemagen puml @schemas.list
+
 ## Attribute Types
 
 | Letter | Type | Description |
