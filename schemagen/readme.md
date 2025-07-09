@@ -73,3 +73,35 @@ The generated PlantUML looks like:
     }
     Book::author_id -- Author::id
     @enduml
+
+## SQLite Mapping
+
+Input Model
+
+    * Author
+    PK id
+    S name
+    N birth_year
+
+    * Book
+    PK id
+    S title
+    FK author_id Author.id
+    N published_year
+
+Generated SQL Output
+
+    CREATE TABLE Author (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT,
+      birth_year INTEGER
+    );
+
+    CREATE TABLE Book (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      author_id INTEGER NOT NULL,
+      title TEXT,
+      published_year INTEGER
+    );
+
+Note: Foreign keys are typed as INTEGER NOT NULL but not enforced as actual foreign key constraints—Sql.ls doesn’t emit FOREIGN KEY (...) REFERENCES ... clauses, just relational wiring for diagram purposes.
