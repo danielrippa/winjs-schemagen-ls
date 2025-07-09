@@ -4,7 +4,7 @@
 
 
 | Letter | Type | Description |
-+--+--+--+
+|--|--|--|
 | S | String | Textual data, often used for names, titles, descriptions, etc. |
 | N | Number | Numeric values (e.g. integers, floats); good for age, year, quantities. |
 | F | Float | Specifically decimal numbers; sometimes used for prices or ratings. |
