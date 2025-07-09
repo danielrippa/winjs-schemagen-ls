@@ -1,7 +1,6 @@
 # Readme
 
-##
-
+## Attribute Types
 
 | Letter | Type | Description |
 |--|--|--|
