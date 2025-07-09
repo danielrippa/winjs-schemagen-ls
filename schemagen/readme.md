@@ -35,9 +35,9 @@ Prepare a Model File Structure each line using keywords like * for entities, PK 
 ## PlantUML Mapping
 
 | Element | PlantUML | Equivalent | Notes |
-|--|--|--|
-| * EntityName | entity | EntityName { ... }| Declares an entity as a PlantUML class block |
-| PK field | * field | inside the entity block	| Rendered with a star to show it's a primary key |
+|--|--|--|--|
+| * EntityName | entity | EntityName { ... } | Declares an entity as a PlantUML class block |
+| PK field | * field | inside the entity block | Rendered with a star to show it's a primary key |
 | FK field | RefEntity.id | * field + relationship line | Field listed in entity, and a separate A::field -- B::id line |
 | S, N, etc. | field or * field | based on nullability | Rendered normally or prefixed with * if not-null |
 | Relationships | Entity::field -- OtherEntity::id | Drawn as connector lines in PlantUML output |
